@@ -5,204 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iyad Work - Workplace Coaching & Organizational Psychology</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #ffd700;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #ffd700;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #333;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .about, .services, .contact {
-            margin: 30px 0;
-        }
-
-        footer {
-            background-color: #333;
-            color: #ffd700;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Popup styles */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            z-index: 1000;
-        }
-
-        .popup h2 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .popup input[type="email"] {
-            padding: 10px;
-            width: 90%;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .popup button {
-            padding: 10px 20px;
-            background-color: #ffd700;
-            color: #333;
-            border: none;
-            cursor: pointer;
-        }
-
-        .popup button:hover {
-            background-color: #ffb700;
-        }
-
-        .popup .close-btn {
-            background-color: #333;
-            color: white;
-            padding: 5px 10px;
-            margin-top: 10px;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
+        /* Same CSS as before */
     </style>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
+        })();
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Iyad Work</h1>
-        <p>Workplace Coaching & Organizational Psychology</p>
-    </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section id="about" class="about">
-            <h2>About Iyad Work</h2>
-            <p>
-                At Iyad Work, we specialize in workplace coaching and organizational psychology. Our mission is to help organizations create healthier, more productive environments where both individuals and teams can thrive. With a focus on evidence-based practices, we provide tailored coaching and consulting services to enhance leadership, team dynamics, and overall organizational effectiveness.
-            </p>
-        </section>
-
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Leadership Coaching</li>
-                <li>Team Development</li>
-                <li>Organizational Assessments</li>
-                <li>Change Management Consulting</li>
-                <li>Workplace Wellness Programs</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>
-                Ready to take your organization to the next level? Get in touch with us today!
-            </p>
-            <p>Email: <a href="mailto:info@iyad.work">info@iyad.work</a></p>
-            <p>Phone: +123 456 7890</p>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Iyad Work. All rights reserved.</p>
-    </footer>
+    <!-- Same HTML structure as before -->
 
     <!-- Popup window -->
     <div class="overlay"></div>
     <div class="popup" id="subscribe-popup">
         <h2>Subscribe to our Newsletter</h2>
         <p>Stay updated with the latest news and insights!</p>
-        <input type="email" id="email" placeholder="Enter your email" required>
-        <button onclick="subscribe()">Subscribe</button>
+        <form id="subscribe-form" onsubmit="sendEmail(event)">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
         <button class="close-btn" onclick="closePopup()">Close</button>
     </div>
 
     <script>
-        // Function to show the popup
+        // Function to send email using EmailJS
+        function sendEmail(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+
+            // Send an email to you
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID_TO_YOU", {
+                to_email: "iyad@sparathon.com",
+                from_email: email,
+                message: `A new user has subscribed to your newsletter with the email: ${email}`
+            }).then(function(response) {
+                console.log('Email sent to you successfully!', response.status, response.text);
+            }, function(error) {
+                console.log('Failed to send email to you...', error);
+            });
+
+            // Send an email to the user
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID_TO_USER", {
+                to_email: email,
+                message: "Dear Subscriber,\n\nThank you for subscribing to Iyad Work's newsletter. We are excited to have you on board!"
+            }).then(function(response) {
+                console.log('Email sent to the user successfully!', response.status, response.text);
+                alert('Thank you for subscribing!');
+                closePopup();
+            }, function(error) {
+                console.log('Failed to send email to the user...', error);
+                alert('There was an error. Please try again later.');
+            });
+        }
+
+        // Same popup functions as before
         function showPopup() {
             document.querySelector('.overlay').style.display = 'block';
             document.getElementById('subscribe-popup').style.display = 'block';
         }
 
-        // Function to close the popup
         function closePopup() {
             document.querySelector('.overlay').style.display = 'none';
             document.getElementById('subscribe-popup').style.display = 'none';
         }
 
-        // Simulate popup after a delay
         window.onload = function() {
             setTimeout(showPopup, 2000); // Show popup 2 seconds after page loads
-        }
-
-        // Simulate subscription action
-        function subscribe() {
-            var email = document.getElementById('email').value;
-            if (email) {
-                alert('Thank you for subscribing!');
-                closePopup();
-            } else {
-                alert('Please enter a valid email address.');
-            }
         }
     </script>
 </body>

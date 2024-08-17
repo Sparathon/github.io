@@ -62,6 +62,63 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .popup input[type="email"] {
+            padding: 10px;
+            width: 90%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #ffb700;
+        }
+
+        .popup .close-btn {
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -108,5 +165,45 @@
     <footer>
         <p>&copy; 2024 Iyad Work. All rights reserved.</p>
     </footer>
+
+    <!-- Popup window -->
+    <div class="overlay"></div>
+    <div class="popup" id="subscribe-popup">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Stay updated with the latest news and insights!</p>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button onclick="subscribe()">Subscribe</button>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            document.querySelector('.overlay').style.display = 'block';
+            document.getElementById('subscribe-popup').style.display = 'block';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.getElementById('subscribe-popup').style.display = 'none';
+        }
+
+        // Simulate popup after a delay
+        window.onload = function() {
+            setTimeout(showPopup, 2000); // Show popup 2 seconds after page loads
+        }
+
+        // Simulate subscription action
+        function subscribe() {
+            var email = document.getElementById('email').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                closePopup();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
 </body>
 </html>

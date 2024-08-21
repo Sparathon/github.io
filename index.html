@@ -6,88 +6,66 @@
     <title>Sparathon</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: url('your-animated-background.gif') no-repeat center center fixed; /* Replace with your actual GIF URL */
-            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
             color: #333;
         }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: rgba(255, 255, 255, 0.8); /* White with slight transparency */
-        }
-
-        .header {
-            background: url('iyadmain.png') no-repeat center center;
-            background-size: cover;
-            color: #fff; /* White text to contrast the image */
-            padding: 50px;
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
             text-align: center;
         }
-
-        .menu {
-            display: flex;
-            justify-content: center;
-            background-color: #333; /* Black background for the menu */
+        nav {
+            margin-top: 10px;
         }
-
-        .menu a {
-            color: #fff; /* White text */
-            padding: 14px 20px;
+        nav a {
+            color: #fff;
+            margin: 0 15px;
             text-decoration: none;
-            text-align: center;
             font-weight: bold;
         }
-
-        .menu a:hover {
-            background-color: #fdd835; /* Yellow on hover */
-            color: #000; /* Black text on hover */
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 20px;
+        section {
+            padding: 40px 20px;
             text-align: center;
         }
-
-        .subscribe-section {
-            margin-top: 20px;
+        h1, h2 {
+            color: #000;
         }
-
-        .footer {
-            background-color: #fdd835; /* Bright yellow */
-            color: #000; /* Black text */
+        footer {
+            background-color: #000;
+            color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Sparathon</h1>
-        </header>
-        <nav class="menu">
-            <a href="#coaching">Coaching</a>
-            <a href="#workplace-consulting">Workplace Consulting</a>
-            <a href="#other">Other</a>
+    <header>
+        <h1>Sparathon</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#work-with-iyad">Work with Iyad</a>
         </nav>
-        <main class="main-content">
-            <h2>Welcome to Sparathon</h2>
-            <p>Join us for exciting updates and events!</p>
-            <div class="subscribe-section">
-                <iframe src="https://sparathon.substack.com/embed" width="100%" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-        </main>
-        <footer class="footer">
-            <p>&copy; 2024 Sparathon. All rights reserved.</p>
-        </footer>
-    </div>
-    <script>
-        // You can add any interactivity here if needed
-    </script>
+    </header>
+
+    <section id="about">
+        <h2>About Sparathon</h2>
+        <p>Sparathon is dedicated to empowering individuals and organizations by providing tailored coaching, mentoring, and consulting services.</p>
+    </section>
+
+    <section id="work-with-iyad">
+        <h2>Work with Iyad</h2>
+        <p>Partner with Iyad for personalized guidance and professional development. Explore opportunities for collaboration and growth.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sparathon. All rights reserved.</p>
+    </footer>
 </body>
 </html>

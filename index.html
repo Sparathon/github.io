@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparathon</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,13 +13,16 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.5;
+            transition: opacity 0.5s ease-in-out;
         }
+        /* Header styling */
         header {
             background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
+        /* Navigation links styling */
         nav a {
             color: #fff;
             margin: 0 15px;
@@ -27,15 +31,18 @@
             cursor: pointer;
             padding: 5px 10px;
         }
-        .active {
-            background-color: yellow;
-            color: #000;
-        }
+        /* Section styling */
         section {
             padding: 40px;
             text-align: center;
             line-height: 1.5;
+            opacity: 0;
         }
+        /* Make sections visible on display */
+        section.visible {
+            opacity: 1;
+        }
+        /* Footer styling */
         footer {
             background-color: #000;
             color: #fff;
@@ -46,25 +53,38 @@
             width: 100%;
             bottom: 0;
         }
+        /* Specific styling for the 'Who' section */
         #who {
             text-align: left;
             max-width: 800px;
             margin: auto;
             line-height: 1.5;
         }
-        .highlight {
-            background-color: yellow;
+        /* Add spacing between list items */
+        ul li {
+            margin-bottom: 10px;
+        }
+        /* Styling for contact icons (email and LinkedIn) */
+        .contact-icons {
+            display: inline-flex;
+            align-items: center;
+        }
+        .contact-icons img {
+            margin-right: 10px;
+            vertical-align: middle;
         }
     </style>
     <script>
+        // Function to show the selected section and hide the others
         function showSection(sectionId) {
-            document.getElementById('what').style.display = 'none';
-            document.getElementById('who').style.display = 'none';
-            document.getElementById('what-link').classList.remove('active');
-            document.getElementById('who-link').classList.remove('active');
-            document.getElementById(sectionId).style.display = 'block';
-            document.getElementById(sectionId + '-link').classList.add('active');
+            document.getElementById('what').classList.remove('visible');
+            document.getElementById('who').classList.remove('visible');
+            document.getElementById(sectionId).classList.add('visible');
         }
+        // Show the "What" section by default when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('what');
+        });
     </script>
 </head>
 <body>
@@ -76,20 +96,33 @@
         </nav>
     </header>
 
+    <!-- What section with services and contact details -->
     <section id="what">
-        <h2 class="highlight">What We Do</h2>
+        <h2>What We Do</h2>
         <p>At Sparathon, we’re passionate about tackling complex challenges and empowering leaders. Our expertise includes:</p>
         <ul style="text-align:left; max-width: 800px; margin: auto;">
             <li><strong>Thought Leadership:</strong> Sharing insights on the science and practical applications of wellbeing, meaningful work, and leadership development through masterclasses, interviews, and long-form articles.</li>
             <li><strong>Leadership & Career Coaching:</strong> Providing personalized 1-1 and group coaching for leaders and job seekers to enhance their career growth and effectiveness.</li>
             <li><strong>System Building:</strong> Designing and implementing behavior-first organizational systems for Learning, Recruiting, Performance, and Engagement.</li>
         </ul>
-        <p>For an initial discovery call, reach out to us.</p>
-        <p><strong>Contact:</strong><br>Email: iyad@sparathon.com<br>LinkedIn: <a href="https://www.linkedin.com/in/iyado" target="_blank">www.linkedin.com/in/iyado</a></p>
+        <p>For a free initial discovery call, reach out to us.</p>
+        <p><strong>Contact:</strong></p>
+        <div class="contact-icons">
+            <!-- Email icon with a mailto link -->
+            <a href="mailto:iyad@sparathon.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_Icon.svg" alt="Email" width="24" height="24">
+            </a>
+            <!-- LinkedIn icon with a hyperlink -->
+            <a href="https://www.linkedin.com/in/iyado" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="24" height="24">
+            </a>
+        </div>
+        <p>San Francisco, California</p>
     </section>
 
+    <!-- Who section with information about Iyad Uakoub -->
     <section id="who" style="display:none;">
-        <h2 class="highlight">Iyad Uakoub</h2>
+        <h2>Iyad Uakoub</h2>
         <p>Iyad Uakoub is an award-winning executive coach and a Silicon Valley-based HR leader with training from Stanford and Harvard in behavioral science and organizational psychology. With over 21 years of experience, he has led People, Learning, and Inclusion initiatives at various organizations, including three tech unicorns.</p>
         <p>He is currently the Head of People, Culture, and Behavioral Science at Sounding Board Inc., a VC-backed leadership development firm in the San Francisco Bay Area.</p>
         <p>Iyad is the founder of Sparathon, a San Francisco-based coaching consultancy that integrates leadership coaching with applied behavioral science. His coaching portfolio features over 200 leaders across more than 100 organizations, including Yahoo, Cisco, Mozilla, Microsoft, LinkedIn, Bill.com, and many more.</p>
@@ -97,6 +130,7 @@
         <p>Iyad also serves on advisory boards for HR.com, Harvard Business Review, and the International Coaching Federation’s Digital Coaching Committee. His thought leadership is featured in prominent outlets like Forbes, Stanford, ATD, SHRM, HCI, NACE, NCDA, and HBR.</p>
     </section>
 
+    <!-- Footer with copyright information -->
     <footer>
         <p>&copy; 2024 Sparathon. All rights reserved.</p>
     </footer>

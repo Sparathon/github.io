@@ -15,53 +15,64 @@
         header {
             background-color: #000;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
-        }
-        nav {
-            margin-top: 10px;
         }
         nav a {
             color: #fff;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
         }
         section {
-            padding: 40px 20px;
+            padding: 40px;
             text-align: center;
-        }
-        h1, h2 {
-            color: #000;
         }
         footer {
             background-color: #000;
             color: #fff;
             text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        #who {
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('what').style.display = 'none';
+            document.getElementById('who').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Sparathon</h1>
         <nav>
-            <a href="#about">About</a>
-            <a href="#work-with-iyad">Work with Iyad</a>
+            <a onclick="showSection('what')">What</a>
+            <a onclick="showSection('who')">Who</a>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Sparathon</h2>
-        <p>Sparathon is dedicated to empowering individuals and organizations by providing tailored coaching, mentoring, and consulting services.</p>
+    <section id="what">
+        <h2>Problems We Enjoy Solving:</h2>
+        <p>We specialize in delivering impactful masterclasses and workshops on the science and practical applications of wellbeing and meaningful work. Our services include 1-1 and group coaching focused on enhancing leadership capabilities. We also excel in building comprehensive systems for Learning, Recruiting, Performance, and Engagement.</p>
+        <p>For more details, reach out to us.</p>
+        <p><strong>Contact:</strong><br>Email: iyad@sparathon.com</p>
     </section>
 
-    <section id="work-with-iyad">
-        <h2>Work with Iyad</h2>
-        <p>Partner with Iyad for personalized guidance and professional development. Explore opportunities for collaboration and growth.</p>
+    <section id="who" style="display:none;">
+        <h2>Iyad Uakoub</h2>
+        <p>Iyad Uakoub is an award-winning executive coach and a Silicon Valley-based HR leader with training from Stanford and Harvard in behavioral science and organizational psychology. With over 21 years of experience, he has led People, Learning, and Inclusion initiatives at various organizations, including three tech unicorns.</p>
+        <p>He is currently the Head of People, Culture, and Behavioral Science at Sounding Board Inc., a VC-backed leadership development firm in the San Francisco Bay Area.</p>
+        <p>Iyad is the founder of Sparathon, a San Francisco-based coaching consultancy that integrates leadership coaching with applied behavioral science. His coaching portfolio features over 200 leaders across more than 100 organizations, including Yahoo, Cisco, Mozilla, Microsoft, LinkedIn, Bill.com, and many more.</p>
+        <p>Educated at Purdue, USF, Stanford, and Harvard, Iyad's doctoral research focused on self-regulation, adaptive leadership, and workplace inclusion. He co-created the Dynamic Leadership Model of Leadership Capacity, featured in the book Leadership Revolution: The Future of Developing Dynamic Leaders.</p>
+        <p>Iyad also serves on advisory boards for HR.com, Harvard Business Review, and the International Coaching Federation’s Digital Coaching Committee. His thought leadership is featured in prominent outlets like Forbes, Stanford, ATD, SHRM, HCI, NACE, NCDA, and HBR.</p>
     </section>
 
     <footer>

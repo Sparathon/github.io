@@ -37,10 +37,12 @@
             text-align: center;
             line-height: 1.5;
             opacity: 0;
+            display: none; /* Hide sections by default */
         }
-        /* Make sections visible on display */
+        /* Make sections visible when selected */
         section.visible {
             opacity: 1;
+            display: block;
         }
         /* Footer styling */
         footer {
@@ -69,9 +71,10 @@
             display: inline-flex;
             align-items: center;
         }
-        .contact-icons img {
+        .contact-icons a {
             margin-right: 10px;
-            vertical-align: middle;
+            font-size: 24px; /* Adjust size of emoji */
+            text-decoration: none;
         }
     </style>
     <script>
@@ -97,7 +100,7 @@
     </header>
 
     <!-- What section with services and contact details -->
-    <section id="what">
+    <section id="what" class="visible">
         <h2>What We Do</h2>
         <p>At Sparathon, we’re passionate about tackling complex challenges and empowering leaders. Our expertise includes:</p>
         <ul style="text-align:left; max-width: 800px; margin: auto;">
@@ -108,10 +111,8 @@
         <p>For a free initial discovery call, reach out to us.</p>
         <p><strong>Contact:</strong></p>
         <div class="contact-icons">
-            <!-- Email icon with a mailto link -->
-            <a href="mailto:iyad@sparathon.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_Icon.svg" alt="Email" width="24" height="24">
-            </a>
+            <!-- Updated Email icon with a mailto link using emoji -->
+            <a href="mailto:iyad@sparathon.com" target="_blank">📧</a>
             <!-- LinkedIn icon with a hyperlink -->
             <a href="https://www.linkedin.com/in/iyado" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="24" height="24">
@@ -121,7 +122,7 @@
     </section>
 
     <!-- Who section with information about Iyad Uakoub -->
-    <section id="who" style="display:none;">
+    <section id="who">
         <h2>Iyad Uakoub</h2>
         <p>Iyad Uakoub is an award-winning executive coach and a Silicon Valley-based HR leader with training from Stanford and Harvard in behavioral science and organizational psychology. With over 21 years of experience, he has led People, Learning, and Inclusion initiatives at various organizations, including three tech unicorns.</p>
         <p>He is currently the Head of People, Culture, and Behavioral Science at Sounding Board Inc., a VC-backed leadership development firm in the San Francisco Bay Area.</p>

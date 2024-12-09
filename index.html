@@ -1,3 +1,18 @@
+Below is the updated code. Note the following changes:
+
+1. **Clients Section:**  
+   - Converted the client list to display logos in three columns using CSS Grid.
+   - Assumed you have client logos saved in an `images` folder with names matching the companies (e.g., `images/sounding_board.png`). If not, you can replace the `src` attributes with the actual image URLs.  
+   - Each logo is displayed as an `<img>` tag. Adjust `alt` and `title` text as desired.
+
+2. **Who Section (Bio Updates):**  
+   - Added a "Key Strengths" section after the existing biography paragraphs.
+   - Included "Skills & Capabilities" and "Tools & Systems" as descriptive text sections.
+   - Added a "Certifications & Awards" section as a bullet list.
+
+Feel free to adjust formatting, headings, or text as needed.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,6 +91,30 @@
             font-size: 24px; /* Adjust size of emoji */
             text-decoration: none;
         }
+        /* Clients grid styling */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .clients-grid img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        /* Additional styling for Key Strengths section */
+        .strengths-section h3 {
+            margin-top: 40px;
+        }
+        .strengths-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
     </style>
     <script>
         // Function to show the selected section and hide the others
@@ -114,9 +153,7 @@
         <p>For a free initial discovery call, reach out to us.</p>
         <p><strong>Contact:</strong></p>
         <div class="contact-icons">
-            <!-- Updated Email icon with a mailto link using emoji -->
             <a href="mailto:iyad@sparathon.com" target="_blank">📧</a>
-            <!-- LinkedIn icon with a hyperlink -->
             <a href="https://www.linkedin.com/in/iyado" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="24" height="24">
             </a>
@@ -130,55 +167,91 @@
         <p>Iyad Uakoub is an award-winning executive coach and a Silicon Valley-based HR leader with training from Stanford and Harvard in behavioral science and organizational psychology. With over 21 years of experience, he has led People, Learning, and Inclusion initiatives at various organizations, including three tech unicorns.</p>
         <p>He is currently the Head of People, Culture, and Behavioral Science at Sounding Board Inc., a VC-backed leadership development firm in the San Francisco Bay Area.</p>
         <p>Iyad is the founder of Sparathon, a San Francisco-based coaching consultancy that integrates leadership coaching with applied behavioral science. His coaching portfolio features over 200 leaders across more than 100 organizations, including Yahoo, Cisco, Mozilla, Microsoft, LinkedIn, Bill.com, and many more.</p>
-        <p>Educated at Purdue, USF, Stanford, and Harvard, Iyad's doctoral research focused on self-regulation, adaptive leadership, and workplace inclusion. He co-created the Dynamic Leadership Model of Leadership Capacity, featured in the book Leadership Revolution: The Future of Developing Dynamic Leaders.</p>
+        <p>Educated at Purdue, USF, Stanford, and Harvard, Iyad's doctoral research focused on self-regulation, adaptive leadership, and workplace inclusion. He co-created the Dynamic Leadership Model of Leadership Capacity, featured in the book <em>Leadership Revolution: The Future of Developing Dynamic Leaders</em>.</p>
         <p>Iyad also serves on advisory boards for HR.com, Harvard Business Review, and the International Coaching Federation’s Digital Coaching Committee. His thought leadership is featured in prominent outlets like Forbes, Stanford, ATD, SHRM, HCI, NACE, NCDA, and HBR.</p>
+
+        <div class="strengths-section">
+            <h3>Key Strengths</h3>
+            <p><strong>Skills & Capabilities:</strong><br>
+            Needs & Impact Assessment | Skills Mapping | Early Talent | Micro-learning | Leadership & Career Development | Manager Training | Onboarding | Internal Coaching | Performance Success | Quantitative & Qualitative Research | Recruiting Systems, Performance Management & Reviews, Org Charting, Rightsizing, Corporate Governance, RIFs, HR Policies</p>
+
+            <p><strong>Tools & Systems:</strong><br>
+            HRIS (Zenefits, Lattice, Trinet, Workday, Namely, Bamboo) | Talent (Greenhouse) | Analytics (Qualtrics, Tableau) | Productivity (Slack, JIRA) | Engagement (CultureAmp, Glint), LMS (LearnAmp, EdCast, SAP Litmos) | Experience Design (Articulate 360)</p>
+
+            <h3>Certifications & Awards</h3>
+            <ul>
+                <li><strong>HR.com Board Member:</strong> Represents 2 million HR professionals, setting coaching & mentoring standards.</li>
+                <li><strong>Advisory Member:</strong> Forbes HR Council, Harvard Business Review, MIT Technology Review Global Panel</li>
+                <li><strong>ICF Certified Coach:</strong> Credentialed by the International Coaching Federation.</li>
+                <li><strong>ICF Steering Committee Member:</strong> Contributed to setting standards for coaching platforms.</li>
+                <li><strong>iPEC Coaching Certification:</strong> Earned from a top-tier coaching school accredited by the ICF.</li>
+                <li><strong>Who’s Who in America:</strong> Approved subject in the biographical record by The Marquis Who’s Who Publication Board.</li>
+                <li><strong>Top 10 Under 40:</strong> Winner of the Top Young Professional Award by the Lafayette Chamber of Commerce.</li>
+                <li><strong>Speaker and Presenter:</strong> ATD, SHRM, HCI, NACE, Handshake, Fulbright, Amideast, From Day One.</li>
+                <li><strong>SHRM-SCP:</strong> Senior Certified Professional awarded by the Society for Human Resource Management.</li>
+                <li><strong>SHRM-CP:</strong> Certified Professional awarded by the Society for Human Resource Management.</li>
+                <li><strong>PHR:</strong> Professional Human Resources Awarded by HRCI (Human Resource Capital Institute)</li>
+                <li><strong>ACE Virtuoso:</strong> Recognized among the top 1% of coaches under D. Peterson & D. Goldsmith.</li>
+                <li><strong>Stanford Behavior Design Lab:</strong> Under Dr. BJ Fogg.</li>
+                <li><strong>Designing Your Life Coach:</strong> Stanford Designing Your Life Lab. MENA’s 1st Arabic-speaking coach.</li>
+                <li><strong>Book Contribution:</strong> Co-authored the Science section in <em>Leadership Revolution</em> by Lori Mazan.</li>
+                <li><strong>Psychological Safety Practitioner:</strong> Certified under Amy Edmondson’s methodology.</li>
+                <li><strong>NCDA GCDF:</strong> Global Career Development Facilitator by the National Career Development Association.</li>
+                <li><strong>Fellow at the Harvard Institute of Coaching:</strong> Recognized as a senior coaching scholar globally.</li>
+                <li><strong>Certified Fractional HR Leader:</strong> Experienced in leading HR functions for global organizations.</li>
+                <li><strong>Fulbright Scholar:</strong> Recipient of the prestigious academic and professional grant program.</li>
+                <li><strong>Award-winning Career Center Leader:</strong> Led top 5 career centers in the U.S. at Purdue and Stanford Universities.</li>
+                <li><strong>Top Coach Legacy Award:</strong> Honored by California State University in partnership with Braven for impact.</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Clients section -->
     <section id="clients">
         <h2>Clients</h2>
         <p>We’ve partnered with a wide range of clients, including:</p>
-        <ul style="text-align:left; max-width: 800px; margin: auto;">
-            <li>Sounding Board</li>
-            <li>Skillz</li>
-            <li>JUUL</li>
-            <li>ThousandEyes</li>
-            <li>Stanford</li>
-            <li>Purdue</li>
-            <li>Fulbright</li>
-            <li>Syria Trust - Shababa</li>
-            <li>UNDP</li>
-            <li>SCS-Net</li>
-            <li>Syriatel</li>
-            <li>Localized</li>
-            <li>NinetyfiveZ</li>
-            <li>Sparathon</li>
-            <li>500 Global</li>
-            <li>Khibraty</li>
-            <li>Jussor</li>
-            <li>Ignite</li>
-            <li>UNRWA</li>
-            <li>UNDP</li>
-            <li>Rumman</li>
-            <li>Tamkeen</li>
-            <li>Capitaldotcom</li>
-            <li>Wedohr</li>
-            <li>ThinkHR</li>
-            <li>Bank of America</li>
-            <li>Mendel</li>
-            <li>Ligadata</li>
-            <li>DFAS</li>
-            <li>Yahoo</li>
-            <li>Mercury</li>
-            <li>Mozilla</li>
-            <li>Linkedin</li>
-            <li>Microsoft</li>
-            <li>Brightmark</li>
-            <li>Plaid</li>
-            <li>Cencus</li>
-            <li>Faisal Holding</li>
-            <li>GES</li>
-        </ul>
+        <div class="clients-grid">
+            <!-- Replace src with actual logo URLs or local image paths -->
+            <img src="images/sounding_board.png" alt="Sounding Board" title="Sounding Board">
+            <img src="images/skillz.png" alt="Skillz" title="Skillz">
+            <img src="images/juul.png" alt="JUUL" title="JUUL">
+            <img src="images/thousandeyes.png" alt="ThousandEyes" title="ThousandEyes">
+            <img src="images/stanford.png" alt="Stanford" title="Stanford">
+            <img src="images/purdue.png" alt="Purdue" title="Purdue">
+            <img src="images/fulbright.png" alt="Fulbright" title="Fulbright">
+            <img src="images/syria_trust.png" alt="Syria Trust - Shababa" title="Syria Trust - Shababa">
+            <img src="images/undp.png" alt="UNDP" title="UNDP">
+            <img src="images/scs_net.png" alt="SCS-Net" title="SCS-Net">
+            <img src="images/syriatel.png" alt="Syriatel" title="Syriatel">
+            <img src="images/localized.png" alt="Localized" title="Localized">
+            <img src="images/ninetyfivez.png" alt="NinetyfiveZ" title="NinetyfiveZ">
+            <img src="images/sparathon.png" alt="Sparathon" title="Sparathon">
+            <img src="images/500_global.png" alt="500 Global" title="500 Global">
+            <img src="images/khibraty.png" alt="Khibraty" title="Khibraty">
+            <img src="images/jussor.png" alt="Jussor" title="Jussor">
+            <img src="images/ignite.png" alt="Ignite" title="Ignite">
+            <img src="images/unrwa.png" alt="UNRWA" title="UNRWA">
+            <img src="images/undp.png" alt="UNDP" title="UNDP (Duplicate)">
+            <img src="images/rumman.png" alt="Rumman" title="Rumman">
+            <img src="images/tamkeen.png" alt="Tamkeen" title="Tamkeen">
+            <img src="images/capitaldotcom.png" alt="Capitaldotcom" title="Capitaldotcom">
+            <img src="images/wedohr.png" alt="Wedohr" title="Wedohr">
+            <img src="images/thinkhr.png" alt="ThinkHR" title="ThinkHR">
+            <img src="images/bank_of_america.png" alt="Bank of America" title="Bank of America">
+            <img src="images/mendel.png" alt="Mendel" title="Mendel">
+            <img src="images/ligadata.png" alt="Ligadata" title="Ligadata">
+            <img src="images/dfas.png" alt="DFAS" title="DFAS">
+            <img src="images/yahoo.png" alt="Yahoo" title="Yahoo">
+            <img src="images/mercury.png" alt="Mercury" title="Mercury">
+            <img src="images/mozilla.png" alt="Mozilla" title="Mozilla">
+            <img src="images/linkedin.png" alt="LinkedIn" title="LinkedIn">
+            <img src="images/microsoft.png" alt="Microsoft" title="Microsoft">
+            <img src="images/brightmark.png" alt="Brightmark" title="Brightmark">
+            <img src="images/plaid.png" alt="Plaid" title="Plaid">
+            <img src="images/cencus.png" alt="Cencus" title="Cencus">
+            <img src="images/faisal_holding.png" alt="Faisal Holding" title="Faisal Holding">
+            <img src="images/ges.png" alt="GES" title="GES">
+        </div>
     </section>
 
     <!-- Footer -->
@@ -187,3 +260,4 @@
     </footer>
 </body>
 </html>
+```

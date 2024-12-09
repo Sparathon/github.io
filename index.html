@@ -82,6 +82,8 @@
         function showSection(sectionId) {
             document.getElementById('what').classList.remove('visible');
             document.getElementById('who').classList.remove('visible');
+            document.getElementById('clients').classList.remove('visible');
+
             document.getElementById(sectionId).classList.add('visible');
         }
         // Show the "What" section by default when the page loads
@@ -96,10 +98,11 @@
         <nav>
             <a id="what-link" onclick="showSection('what')" class="active">What</a>
             <a id="who-link" onclick="showSection('who')">Who</a>
+            <a id="clients-link" onclick="showSection('clients')">Clients</a>
         </nav>
     </header>
 
-    <!-- What section with services and contact details -->
+    <!-- What section -->
     <section id="what" class="visible">
         <h2>What We Do</h2>
         <p>At Sparathon, we’re passionate about tackling complex challenges and empowering leaders. Our expertise includes:</p>
@@ -121,7 +124,7 @@
         <p>San Francisco, California</p>
     </section>
 
-    <!-- Who section with information about Iyad Uakoub -->
+    <!-- Who section -->
     <section id="who">
         <h2>Iyad Uakoub</h2>
         <p>Iyad Uakoub is an award-winning executive coach and a Silicon Valley-based HR leader with training from Stanford and Harvard in behavioral science and organizational psychology. With over 21 years of experience, he has led People, Learning, and Inclusion initiatives at various organizations, including three tech unicorns.</p>
@@ -131,7 +134,54 @@
         <p>Iyad also serves on advisory boards for HR.com, Harvard Business Review, and the International Coaching Federation’s Digital Coaching Committee. His thought leadership is featured in prominent outlets like Forbes, Stanford, ATD, SHRM, HCI, NACE, NCDA, and HBR.</p>
     </section>
 
-    <!-- Footer with copyright information -->
+    <!-- Clients section -->
+    <section id="clients">
+        <h2>Clients</h2>
+        <p>We’ve partnered with a wide range of clients, including:</p>
+        <ul style="text-align:left; max-width: 800px; margin: auto;">
+            <li>Sounding Board</li>
+            <li>Skillz</li>
+            <li>JUUL</li>
+            <li>ThousandEyes</li>
+            <li>Stanford</li>
+            <li>Purdue</li>
+            <li>Fulbright</li>
+            <li>Syria Trust - Shababa</li>
+            <li>UNDP</li>
+            <li>SCS-Net</li>
+            <li>Syriatel</li>
+            <li>Localized</li>
+            <li>NinetyfiveZ</li>
+            <li>Sparathon</li>
+            <li>500 Global</li>
+            <li>Khibraty</li>
+            <li>Jussor</li>
+            <li>Ignite</li>
+            <li>UNRWA</li>
+            <li>UNDP</li>
+            <li>Rumman</li>
+            <li>Tamkeen</li>
+            <li>Capitaldotcom</li>
+            <li>Wedohr</li>
+            <li>ThinkHR</li>
+            <li>Bank of America</li>
+            <li>Mendel</li>
+            <li>Ligadata</li>
+            <li>DFAS</li>
+            <li>Yahoo</li>
+            <li>Mercury</li>
+            <li>Mozilla</li>
+            <li>Linkedin</li>
+            <li>Microsoft</li>
+            <li>Brightmark</li>
+            <li>Plaid</li>
+            <li>Cencus</li>
+            <li>Faisal Holding</li>
+            <li>GES</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Sparathon. All rights reserved.</p>
     </footer>
